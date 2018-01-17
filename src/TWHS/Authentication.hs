@@ -2,7 +2,7 @@
 {-# LANGUAGE FlexibleContexts  #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-module Internal where
+module TWHS.Authentication where
 
 import           Control.Applicative
 import           Control.Lens
