@@ -1,12 +1,12 @@
 {-# LANGUAGE FlexibleContexts  #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-module Timeline where
+module TWHS.Status where
 
 import           Control.Lens
 import qualified Data.Text              as T
 import qualified Data.Text.IO           as T
-import           Internal
+import           TWHS.Authentication
 import           Web.Twitter.Conduit
 import           Web.Twitter.Types.Lens
 
@@ -15,8 +15,8 @@ getTWInfo = do
   (oa, cred) <- getOAuthTokens
   return $ setCredential oa cred def
 
-main :: IO ()
-main = do
+updateStatus :: IO ()
+updateStatus = do
   mgr <- newManager tlsManagerSettings
   twInfo <- getTWInfo
   putStrLn $ "Posting..."
